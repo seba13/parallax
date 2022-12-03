@@ -1,29 +1,28 @@
-
-
-*
-{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-body
-{
+/* body, html  */
+/* { */
+    /* touch-action: none; */
+/* }     */
+
+body {
     font-family: 'Roboto', sans-serif;
     /* padding-top: 1px; */
     position: relative;
 }
 
 
-header
-{
+header {
     /* padding-top: 1px; */
     width: 100%;
     position: relative;
 }
 
-.container-bg
-{
+.container-bg {
     width: 100%;
     max-height: 100vh;
     height: 100vh;
@@ -32,38 +31,33 @@ header
 }
 
 
-.container-bg img
-{
+.container-bg img {
     position: absolute;
     top: 0;
     left: 0;
 
-    transform: translate(0,0);
+    transform: translate(0, 0);
     transition: transform .6s ease-in-out;
 }
 
-.container-bg img.landscape
-{
+.container-bg img.landscape {
     width: 110%;
 }
 
 /* Fondo container-bg img.landscape:nth-child(1)*/
-.container-bg img.landscape:nth-child(1)
-{
+.container-bg img.landscape:nth-child(1) {
     /* filter: invert(1) hue-rotate(21deg) saturate(3); */
     transition: filter 1s ease;
 }
 
-.bg-night
-{
-     filter: invert(1) hue-rotate(30deg) saturate(3);
+.bg-night {
+    filter: invert(1) hue-rotate(30deg) saturate(3);
 }
 
 
 
 /* Piso 1 */
-.container-bg img.landscape:nth-child(2)
-{   
+.container-bg img.landscape:nth-child(2) {
     top: auto;
     bottom: -10%;
     z-index: 100;
@@ -71,8 +65,7 @@ header
 }
 
 /* Piso 2 */
-.container-bg img.landscape:nth-child(3)
-{   
+.container-bg img.landscape:nth-child(3) {
     top: auto;
     bottom: 7%;
     left: -3%;
@@ -81,8 +74,7 @@ header
 }
 
 /* Piso 3 */
-.container-bg img.landscape:nth-child(4)
-{   
+.container-bg img.landscape:nth-child(4) {
     top: auto;
     bottom: 19%;
     left: 0;
@@ -91,8 +83,7 @@ header
 }
 
 /* Piso 4 */
-.container-bg img.landscape:nth-child(5)
-{   
+.container-bg img.landscape:nth-child(5) {
     top: auto;
     bottom: 26%;
     left: 0;
@@ -101,8 +92,7 @@ header
 }
 
 /* Piso 5 */
-.container-bg img.landscape:nth-child(6)
-{   
+.container-bg img.landscape:nth-child(6) {
     top: auto;
     bottom: 10%;
     left: 0;
@@ -111,8 +101,7 @@ header
 }
 
 /* Piso 6 */
-.container-bg img.landscape:nth-child(7)
-{
+.container-bg img.landscape:nth-child(7) {
     z-index: 50;
     left: -5%;
     top: auto;
@@ -120,15 +109,14 @@ header
     transition-delay: -.1s;
 }
 
-.container-bg img.back:nth-child(8)
-{
+.container-bg img.back:nth-child(8) {
     top: 10%;
     left: 0;
     z-index: 40;
     width: 50%;
 }
-.container-bg img.back:nth-child(9)
-{
+
+.container-bg img.back:nth-child(9) {
     top: 10%;
     left: auto;
     right: 0;
@@ -136,16 +124,16 @@ header
     width: 50%;
 }
 
-.container-bg img.birds
-{
+.container-bg img.birds {
     top: 13%;
     left: 30%;
     z-index: 60;
     width: 30%;
+
+    transition-delay: -.1s;
 }
 
-.container-bg img.moon
-{
+.container-bg img.moon {
     width: 5%;
     left: auto;
     top: 3%;
@@ -155,14 +143,12 @@ header
     /* filter: drop-shadow(0px 0px 5px #fff) drop-shadow(0px 0px 40px #fff); */
 }
 
-.active-moon
-{
+.active-moon {
     filter: drop-shadow(0px 0px 5px #fff) drop-shadow(0px 0px 40px #fff);
 }
 
 
-.container-bg h1
-{
+.container-bg h1 {
     position: absolute;
     font-size: 5vw;
     font-weight: 800;
@@ -176,8 +162,7 @@ header
 }
 
 
-main 
-{
+main {
     position: absolute;
     top: 30%;
     left: 1%;
@@ -194,31 +179,27 @@ main
     transition: transform 1s ease;
 }
 
-main .accordion
-{
+main .accordion {
     position: absolute;
     /* width: 100%; */
     z-index: 2;
 }
 
-main .accordion i
-{
+main .accordion i {
     position: absolute;
     top: 0;
     padding: 5px;
     cursor: pointer;
-    transition:  1s transform ease;
+    transition: 1s transform ease;
 }
 
-.accordion i:hover
-{
+.accordion i:hover {
     background-color: rgba(255, 255, 255, 0.783);
 }
 
 
 
-main .container-text 
-{
+main .container-text {
     padding: 15px;
     width: calc(100% - 17px);
     font-size: 1.2em;
@@ -227,17 +208,16 @@ main .container-text
     overflow: hidden;
 
 }
+
 main:focus {
     outline: 7px solid rgba(207, 220, 202, 0.218);
 }
 
-::selection
-{
-    color: rgb(255,255,4);
+::selection {
+    color: rgb(255, 255, 4);
 }
 
-.scroll-container
-{
+.scroll-container {
     height: 100%;
     width: 17px;
     position: absolute;
@@ -248,20 +228,25 @@ main:focus {
 }
 
 .no-select {
-    -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none; /* Safari */
-       -khtml-user-select: none; /* Konqueror HTML */
-         -moz-user-select: none; /* Old versions of Firefox */
-          -ms-user-select: none; /* Internet Explorer/Edge */
-              user-select: none; /* Non-prefixed version, currently
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
-  }
+}
 
 
 
 
-.arrow
-{
+.arrow {
     position: absolute;
     width: 100%;
     height: 15px;
@@ -269,31 +254,26 @@ main:focus {
     margin-bottom: 2px;
 }
 
-.arrow i:hover
-{
+.arrow i:hover {
     background-color: rgb(227, 227, 227);
 }
 
-.arrow i
-{
+.arrow i {
     cursor: pointer;
     width: 100%;
     border-radius: 3px;
 }
 
-.arrow.up
-{
+.arrow.up {
     top: 0;
 }
 
-.arrow.down
-{
+.arrow.down {
     bottom: 0;
 }
 
 
-.scroll
-{
+.scroll {
     width: 100%;
     top: calc(0% + 20px);
     height: calc(100% - 36px);
@@ -304,8 +284,7 @@ main:focus {
 }
 
 
-.scroll .thumb
-{
+.scroll .thumb {
     background-color: rgb(238, 238, 238);
     border-radius: 4px;
     width: calc(100% - 3px);
@@ -314,10 +293,252 @@ main:focus {
     left: 50%;
     transform: translate(-50%, 0);
     height: var(--height);
+    /* transition: top .1s ease; */
+}
+
+.thumb-transition 
+{
+    transition: top .1s ease;
+}
+
+.scroll .thumb:hover {
+    opacity: .7;
+}
+
+@media screen and (max-width: 1450px){
+    main {
+        position: absolute;
+        top: 30%;
+        left: 1%;
+        width: 60%;
+        height: 55%;
+        z-index: 110;
+        backdrop-filter: blur(10px);
+        /* background-color: rgba(10, 9, 9, 0.371); */
+        /* background-color: rgba(143, 138, 138, 0.145); */
+        border-radius: 9px;
+        display: flex;
+        overflow: hidden;
+
+        transition: transform 1s ease;
+    }
+
+
+    .container-bg img.landscape:nth-child(1) {
+        height: 100%;
+    }
+
+
+
+    /* Piso 1 */
+    .container-bg img.landscape:nth-child(2) {
+        top: auto;
+        bottom: 0;
+        z-index: 100;
+        transition-delay: -.1s;
+
+        height: 20%;
+    }
+
+    /* Piso 2 */
+    .container-bg img.landscape:nth-child(3) {
+        top: auto;
+        bottom: 4%;
+        left: -3%;
+        z-index: 90;
+        transition-delay: -.1s;
+    }
+
+    /* Piso 3 */
+    .container-bg img.landscape:nth-child(4) {
+        top: auto;
+        bottom: 8%;
+        left: 0;
+        z-index: 80;
+        transition-delay: -.1s;
+    }
+
+    /* Piso 4 */
+    .container-bg img.landscape:nth-child(5) {
+        top: auto;
+        bottom: 9%;
+        left: -5%;
+        z-index: 70;
+        transition-delay: -.1s;
+    }
+
+    /* Piso 5 */
+    .container-bg img.landscape:nth-child(6) {
+        top: auto;
+        bottom: 0%;
+        left: 0;
+        z-index: 60;
+        transition-delay: -.1s;
+    }
+
+    /* Piso 6 */
+    .container-bg img.landscape:nth-child(7) {
+        z-index: 50;
+        left: -5%;
+        top: auto;
+        bottom: 30%;
+        transition-delay: -.1s;
+    }
+
+    .container-bg img.back:nth-child(8) {
+        top: 62%;
+        left: 0;
+        z-index: 40;
+        width: 50%;
+    }
+
+    .container-bg img.back:nth-child(9) {
+        top: 62%;
+        left: auto;
+        right: 0;
+        z-index: 40;
+        width: 50%;
+    }
+
+    .container-bg img.birds {
+
+        top: 20%;
+        left: 70%;
+        z-index: 60;
+        width: 60%;
+    }
+
+    .container-bg img.moon {
+        width: 15%;
+        left: auto;
+        top: 5%;
+        right: 20%;
+        transition: filter 2s ease;
+        /* filter: drop-shadow(0px 0px 70px rgb(255,255,4)); */
+        /* filter: drop-shadow(0px 0px 5px #fff) drop-shadow(0px 0px 40px #fff); */
+    }
 
 }
 
-.scroll .thumb:hover
-{
-    opacity: .7;
+
+@media only screen and (max-width: 600px) {
+
+
+    main {
+        position: absolute;
+        top: 30%;
+        left: 1%;
+        width: 90%;
+        height: 55%;
+        z-index: 110;
+        backdrop-filter: blur(10px);
+        /* background-color: rgba(10, 9, 9, 0.371); */
+        /* background-color: rgba(143, 138, 138, 0.145); */
+        border-radius: 9px;
+        display: flex;
+        overflow: hidden;
+
+        transition: transform 1s ease;
+    }
+
+
+    .container-bg img 
+    {
+        pointer-events: none;
+    }
+
+    .container-bg img.landscape:nth-child(1) {
+        height: 100%;
+    }
+
+    /* Piso 1 */
+    .container-bg img.landscape:nth-child(2) {
+        top: auto;
+        bottom: 0;
+        z-index: 100;
+        transition-delay: -.1s;
+    }
+
+    /* Piso 2 */
+    .container-bg img.landscape:nth-child(3) {
+        top: auto;
+        bottom: 4%;
+        left: -3%;
+        z-index: 90;
+        transition-delay: -.1s;
+    }
+
+    /* Piso 3 */
+    .container-bg img.landscape:nth-child(4) {
+        top: auto;
+        bottom: 8%;
+        left: 0;
+        z-index: 80;
+        transition-delay: -.1s;
+    }
+
+    /* Piso 4 */
+    .container-bg img.landscape:nth-child(5) {
+        top: auto;
+        bottom: 9%;
+        left: -5%;
+        z-index: 70;
+        transition-delay: -.1s;
+    }
+
+    /* Piso 5 */
+    .container-bg img.landscape:nth-child(6) {
+        top: auto;
+        bottom: 10%;
+        left: 0;
+        z-index: 60;
+        transition-delay: -.1s;
+    }
+
+    /* Piso 6 */
+    .container-bg img.landscape:nth-child(7) {
+        z-index: 50;
+        left: -5%;
+        top: auto;
+        bottom: 23%;
+        transition-delay: -.1s;
+    }
+
+    .container-bg img.back:nth-child(8) {
+        top: 62%;
+        left: 0;
+        z-index: 40;
+        width: 50%;
+    }
+
+    .container-bg img.back:nth-child(9) {
+        top: 62%;
+        left: auto;
+        right: 0;
+        z-index: 40;
+        width: 50%;
+    }
+
+    .container-bg img.birds {
+        top: 50%;
+        left: 40%;
+        z-index: 60;
+        width: 70%;
+    }
+
+    .container-bg img.moon {
+        width: 20%;
+        left: auto;
+        top: 10%;
+        right: 20%;
+        transition: filter 2s ease;
+        /* filter: drop-shadow(0px 0px 70px rgb(255,255,4)); */
+        /* filter: drop-shadow(0px 0px 5px #fff) drop-shadow(0px 0px 40px #fff); */
+    }
+
+    body
+    {
+        touch-action: none; 
+    }
+
 }

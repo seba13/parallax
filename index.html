@@ -215,13 +215,24 @@
                 // fa-solid fa-caret-left
                 let parent =  document.querySelector('main')
                 let arrow
+                let size, translateX 
+
+                if(parent.offsetWidth> 700) {
+                    size = 0.94
+                    translateX = 95
+                } else {
+                    translateX = 80
+                    size = 0.8
+                }
+
+                console.log(parent.offsetWidth);
                 if(event.target.classList.contains('fa-caret-left')) {
-                    parent.style.transform = `translateX(-95%)`
+                    parent.style.transform = `translateX(-${translateX}%)`
                     
                     
                     arrow = document.createElement('I')
                     arrow.classList.add('fa-solid','fa-caret-right')
-                    arrow.style.transform =  `translateX(${parent.offsetWidth*0.94}px)`
+                    arrow.style.transform =  `translateX(${parent.offsetWidth*size}px)`
 
 
                    
@@ -289,6 +300,7 @@
                                     posYInicial = event.clientY - target.getBoundingClientRect().top
 
                                     //target => scroll
+                                    
                                     centrar(event.clientY, target)
                                     scrollText(target)
 
@@ -310,7 +322,7 @@
 
 
                                 function moveCB(event) {
-
+                                    event.preventDefault()
                                     textContainter.classList.add('no-select')
 
                                     move(event.clientY, target)
@@ -368,10 +380,11 @@
                                     if (clientY + thumbScroll.offsetHeight / 2 > bottomScroll) {
                                         top = (scroll.offsetHeight - thumbScroll.offsetHeight) * 100 / scroll.scrollHeight
                                     }
-
-
+                                    
+                                    
                                     thumbScroll.style.top = top + '%';
 
+                                    // thumbScroll.classList.remove('thumb-transition')
                                 }
 
 
@@ -404,12 +417,13 @@
                             // para dispositivos touch
                             else if (event.pointerType == 'touch') {
 
+                                
                                 if (event.target.closest('main .container-text')) {
 
                                     event.target.addEventListener('pointermove', (e) => {
 
                                         textContainter.scrollBy({
-                                            top: -e.movementY * 20,
+                                            top: -e.movementY * 10,
                                             left: 0,
                                             behavior: "smooth"
                                         })
